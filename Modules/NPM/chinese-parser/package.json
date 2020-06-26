@@ -1,0 +1,19 @@
+{
+  "name": "chinese-parser",
+  "version": "1.0.0",
+  "description": "JS/NPM modules for server-side use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/movaclub/ganshina/tree/master/Modules/NPM/chinese-parser"
+  },
+  "keywords": [
+    "chinese-parser",
+    "ch-pr"
+  ],
+  "author": "Fedir Mostovyi",
+  "license": "ISC"
+}
