@@ -1,7 +1,7 @@
 {
   "name": "chinese-parser",
-  "version": "1.0.0",
-  "description": "JS/NPM modules for server-side use.",
+  "version": "1.0.1",
+  "description": "NPM package for https://mova.club",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +12,12 @@
   },
   "keywords": [
     "chinese-parser",
+    "chinese",
+    "parser",
+    "hieroglyph",
+    "hieroglyph-parser",
     "ch-pr"
   ],
-  "author": "Fedir Mostovyi",
+  "author": "Lagger <ted@mova.club> (https://mova.club)",
   "license": "ISC"
 }
