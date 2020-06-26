@@ -1,11 +1,11 @@
 /**
- * @param {string} data - Chinese text
- * @param {number} maxWordLength - The max amount characters in word
- * @param {boolean} sortToLength - Set if needs to sort the groups by length
- * @return {Array} 
+ * @param {string} data - Chinese source text
+ * @param {number} maxWordLength - max length of sub-string generated (optional)
+ * @param {boolean} sortToLength - sort results by string lengths (optional)
+ * @return {Array}
  */
 exports.parse = function(data, maxWordLength = 8, sortToLength = false){
-    if( data instanceof String ) return new Error('String object expects as a first parameter.');
+    if( data instanceof String ) return new Error('Input text must be of type String.');
     if( maxWordLength < 1 || maxWordLength > 999 ) return new Error('Max word length must be in range [1;999]');
     if( !data ) return new Array(0);
 
@@ -35,7 +35,7 @@ exports.parse = function(data, maxWordLength = 8, sortToLength = false){
                 tmpObj.words.push( sentence.substr(start, amount) );
             }
         }
-        resArray.push( tmpObj );
+        resArray.push( Object.assign({}, tmpObj) );
     }
     return resArray;
 }
