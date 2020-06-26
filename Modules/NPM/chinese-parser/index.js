@@ -1,3 +1,4 @@
+
 /**
  * @param {string} data - Chinese source text
  * @param {number} maxWordLength - max length of sub-string generated (optional)
@@ -20,16 +21,15 @@ exports.parse = function(data, maxWordLength = 8, sortToLength = false){
         tmpObj.sentence = sentence;
         tmpObj.words = [];
         if( sortToLength ) tmpObj.groups = {};
-        let start = 0;
 
-        for(;start < sentence.length; start++){
-            let amount = ( (start + maxWordLength) < sentence.length)?start + maxWordLength:sentence.length - start;
-            for(;amount > 0; amount--){
+        for(let start = 0; start < sentence.length; ++start){
+            let maxCurrLength = sentence.length - start;
+            for(let amount = (maxWordLength <= maxCurrLength) ? maxWordLength : maxCurrLength; amount > 0; --amount){
                 if( sortToLength ) {
                     if( amount.toString() in tmpObj.groups ) {
                         tmpObj.groups[ amount.toString() ].push(sentence.substr(start, amount));
                     } else {
-                        tmpObj.groups[ amount.toString() ] = new Array(0);
+                        tmpObj.groups[ amount.toString() ] = new Array(sentence.substr(start, amount));
                     }
                 }
                 tmpObj.words.push( sentence.substr(start, amount) );
